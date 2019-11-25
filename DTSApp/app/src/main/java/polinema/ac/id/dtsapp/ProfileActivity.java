@@ -78,6 +78,11 @@ public class ProfileActivity extends AppCompatActivity
 
     public void onTxvDeleteAccount_Click(View view)
     {
+        UserDao daoUser = AppDbProvider.getInstance(this).userDao();
+        daoUser.delete(this.currentUser);
         Toast.makeText(this, "Your data has been deleted..", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getApplicationContext(), WelcomeBackActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // Lompati halaman sebelumnya
+        startActivity(intent);
     }
 }
