@@ -6,8 +6,10 @@ import android.content.Context;
 public class AppDbProvider {
 
     private static DTSAppDatabase instance;
+    private static DTSAppDatabase asynchronousInstance;
+    private static DTSAppDatabase getAsynchronousInstance;
 
-    public static DTSAppDatabase getInstance(Context context)
+    public static DTSAppDatabase getAsynchronousInstance(Context context)
     {
         if(AppDbProvider.instance == null)
         {
@@ -15,6 +17,6 @@ public class AppDbProvider {
                     context, DTSAppDatabase.class, "dtsapp.db").allowMainThreadQueries().build();
         }
 
-        return AppDbProvider.instance;
+        return AppDbProvider.getAsynchronousInstance;
     }
 }
