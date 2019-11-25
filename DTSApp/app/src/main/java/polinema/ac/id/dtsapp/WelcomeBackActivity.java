@@ -23,7 +23,7 @@ public class WelcomeBackActivity extends AppCompatActivity {
     private CheckBox chkRememberUsername;
     private CheckBox chkKeepLogin;
 
-    private SharedPreFerences sharedPrefs;
+    private SharedPreferences sharedPrefs;
 
     private static final String USERNAME_KEY = "key_username";
     private static final String KEEP_LOGIN_KEY = "key_keep_login";
@@ -34,7 +34,7 @@ public class WelcomeBackActivity extends AppCompatActivity {
         setContentView(R.layout.activity_welcome_back);
 
         this.initComponents();
-        this.sharedPrefs = this.getSharedPreFerences("dtsapp_sharedprefs", Context.MODE_PRIVATE);
+        this.sharedPrefs = this.getSharedPreferences("dtsapp_sharedprefs", Context.MODE_PRIVATE);
 
         this.initComponents();
 
@@ -143,7 +143,5 @@ public class WelcomeBackActivity extends AppCompatActivity {
     {
         // Cek apakah sebelumnya aplikasi diatur agar bypass login?
         // Jika ya maka langsung buka activity berikutnya
-
-        boolean keepLogin = this.sharedPrefs.getBoolean(???, false);
     }
 }
